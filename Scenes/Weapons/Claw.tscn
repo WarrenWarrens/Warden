@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cxpj1wu8ip3mo"]
 
-[ext_resource type="Script" uid="uid://4t2l518038va" path="res://Scripts/Melee.gd" id="1_867j4"]
+[ext_resource type="Script" uid="uid://4t2l518038va" path="res://Scripts/Weapons/Melee.gd" id="1_867j4"]
 [ext_resource type="Texture2D" uid="uid://dkqtfjo6f58gj" path="res://Assets/Art/Fist/KNGFA0.png" id="2_867j4"]
 [ext_resource type="Texture2D" uid="uid://drafg45ksuilm" path="res://Assets/Art/Fist/KNGFB0.png" id="3_bfces"]
 [ext_resource type="Texture2D" uid="uid://qsvaadlju8al" path="res://Assets/Art/Fist/KNGFD0.png" id="4_brw2a"]
