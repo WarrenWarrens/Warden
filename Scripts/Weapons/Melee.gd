@@ -24,12 +24,10 @@ func check_hit():
 func _process(_delta: float) -> void:
 	
 	can_attack = PlayerStats.get_action()
-	# --- Desperation Attack Math ---
 	var available_b = PlayerStats.battlestamina
 	var available_s = PlayerStats.stamina
 	
 	var deficit = max(0.0, B_STAMINA_COST - available_b)
-	# We can attack if we have 0 deficit, OR enough regular stamina to cover 2x the missing amount
 	var can_afford = (deficit == 0) or (available_s >= (deficit * 2.0))
 	
 	
@@ -38,15 +36,14 @@ func _process(_delta: float) -> void:
 		weapon_sprite.play("Attack")
 		check_hit()
 		
-		# Apply the stamina costs
 		if deficit > 0:
-			PlayerStats.change_battlestamina(-available_b) # Drain remaining b_stamina to 0
-			PlayerStats.change_stamina(-(deficit * 2.0))   # Drain 2x the deficit from regular stamina
-			PlayerStats.stamina_delay_timer = REGEN_DELAY  # Pause regular stamina regen
+			PlayerStats.change_battlestamina(-available_b) 
+			PlayerStats.change_stamina(-(deficit * 2.0))  
+			PlayerStats.stamina_delay_timer = REGEN_DELAY 
 		else:
 			PlayerStats.change_battlestamina(-B_STAMINA_COST)
 			
-		PlayerStats.b_stamina_delay_timer = REGEN_DELAY # Pause b_stamina regen
+		PlayerStats.b_stamina_delay_timer = REGEN_DELAY
 		
 		can_attack = false
 		PlayerStats.change_action(0)

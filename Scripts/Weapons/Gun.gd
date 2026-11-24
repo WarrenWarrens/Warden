@@ -21,7 +21,6 @@ func make_flash():
 	var f = flash.instantiate()
 	add_child(f)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	can_shoot = PlayerStats.get_action()
 	
@@ -33,7 +32,6 @@ func _process(_delta: float) -> void:
 			gun_sprite.play("Shoot2")
 			left = true
 		make_flash()
-		#check_hit()
 		PlayerInventory.change_pistol_ammo(-1)
 		can_shoot = false
 		

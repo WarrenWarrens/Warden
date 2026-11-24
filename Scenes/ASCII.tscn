@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cnrq14f0ccpl7"]
+
+[ext_resource type="Shader" uid="uid://d22yaf3lvldlm" path="res://Scenes/ASCII.gdshader" id="1_2oh7e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttpud"]
+shader = ExtResource("1_2oh7e")
+shader_parameter/gamma = 1.55
+shader_parameter/gain = 1.8
+shader_parameter/corrupt = 0.0
+shader_parameter/cell_scale = 1
+shader_parameter/halo_strength = 0.15
+
+[node name="ColorRect" type="ColorRect" unique_id=974145003]
+material = SubResource("ShaderMaterial_ttpud")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
